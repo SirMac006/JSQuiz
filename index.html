@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<main id="main-content">
+
+ <section id="start-screen">
+  <h2>Welcome to the Quiz</h2>
+  <button id="start-btn">Start Quiz</button>
+ </section>
+        
+ <section id="quiz" style="display: none;">
+  <div id="question-container"></div>
+  <div id="choices-container"></div>
+  <div id="timer" aria-live="polite">Time: <span id="time">60</span></div>
+ </section>
+        
+ <section id="end-screen" style="display: none;">
+  <h2>Quiz Over!</h2>
+  <p>Your score: <span id="final-score"></span></p>
+  <form id="initials-form">
+    <label for="initials">Enter Initials:</label>
+    <input type="text" id="initials" name="initials" maxlength="3" required>
+    <button type="submit">Save</button>
+  </form>
+ </section>
+
+ </main>
+    
+    <script src="./assets/js/script.js"></script>
+</html>
