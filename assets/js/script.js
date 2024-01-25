@@ -1,4 +1,3 @@
-/*Define quiz questions and answers */
 const questions = [
   {
       question: "What is JavaScript?",
@@ -21,9 +20,9 @@ const questions = [
     correctAnswer: "To handle user clicks"
 },
 {
-    question: "Which symbol is used for single-line comments in JavaScript?",
+    question: "Which symbol is used for multi-line comments in JavaScript?",
     choices: ["//", "/*", "#", "--"],
-    correctAnswer: "//"
+    correctAnswer: "/*"
 },
 ];
 
@@ -72,10 +71,8 @@ function startQuiz() {
 function displayQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
 
-  // Display question and choices in the HTML
   questionContainer.textContent = currentQuestion.question;
 
-  // Add event listeners to answer choices
   choicesContainer.innerHTML = "";
   currentQuestion.choices.forEach(function(choice) {
       const choiceBtn = document.createElement("button");
@@ -108,13 +105,12 @@ function checkAnswer(choice) {
 function endQuiz() {
   /*Stop the timer*/
   clearInterval(timerInterval);
-  /*Display end screen*/
+
   quizContainer.style.display = "none";
   endScreen.style.display = "block";
-  /*Show final score*/
+
   finalScoreElement.textContent = score;
 
-  /*Handle form submission*/
   initialsForm.addEventListener("submit", function(event) {
       event.preventDefault();
       saveScore();
@@ -127,7 +123,7 @@ function endQuiz() {
     const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     highScores.push({ initials, score });
 
-    /*Sort high scores in descending order*/
+    /*Sorts high scores in descending order*/
     highScores.sort((a, b) => b.score - a.score);
 
     /*Keep only the top 5 high scores */
@@ -135,6 +131,6 @@ function endQuiz() {
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
-    /* Redirect or show high scores page*/
+    /*shows high scores page*/
    window.location.href = "highscores.html";
 }
