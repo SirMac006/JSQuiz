@@ -108,11 +108,9 @@ function checkAnswer(choice) {
 function endQuiz() {
   /*Stop the timer*/
   clearInterval(timerInterval);
-
   /*Display end screen*/
   quizContainer.style.display = "none";
   endScreen.style.display = "block";
-
   /*Show final score*/
   finalScoreElement.textContent = score;
 
@@ -125,18 +123,18 @@ function endQuiz() {
   function saveScore() {
     const initials = initialsInput.value;
 
-    // Save the score and initials to localStorage
+    /*Save the score and initials to localStorage*/
     const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     highScores.push({ initials, score });
 
-    // Sort high scores in descending order
+    /*Sort high scores in descending order*/
     highScores.sort((a, b) => b.score - a.score);
 
-    // Keep only the top 5 high scores
+    /*Keep only the top 5 high scores */
     highScores.splice(5);
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
-    // Redirect or show high scores page
+    /* Redirect or show high scores page*/
    window.location.href = "highscores.html";
 }

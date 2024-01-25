@@ -2,12 +2,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8e1f9; /* Light purple background */
+    background-color: #f8e1f9;
     color: #333;
 }
 
 header {
-    background-color: #0a847c; /* Pink header background */
+    background-color: #0a847c;
     color: #fff;
     padding: 20px;
     text-align: center;
